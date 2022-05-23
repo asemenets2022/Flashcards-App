@@ -57,9 +57,9 @@ export default function DeckOverview() {
         <Link to={`/decks/${deck.id}/cards/new`} className="btn btn-primary">
           Add Cards
         </Link>
-        <a className="btn btn-danger" onClick={() => deleteHandler(deck.id)}>
+        <button className="btn btn-danger" onClick={() => deleteHandler(deck.id)}>
           Delete {" "}
-        </a>
+        </button>
       </div>
 
       <div>

@@ -17,7 +17,7 @@ export default function CardDetails({ id, front, back, deckId, deleteHandler}) {
             <Link to={`/decks/${deckId}/cards/${id}/edit`} className="btn btn-secondary">
               Edit
             </Link>
-            <a className="btn btn-danger" onClick={() => deleteHandler(id)}>Delete</a>
+            <button className="btn btn-danger" onClick={() => deleteHandler(id)}>Delete</button>
           </div>
         </div>
         </div>

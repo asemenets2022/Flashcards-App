@@ -23,7 +23,7 @@ export default function CardForm({ card, submitHandler, cancelHandler }) {
   return (
     <div>
       <form onSubmit={submit}>
-        <div className="form-group" className="mb-3">
+        <div className="form-group mb-3">
           <label>Front</label>
           <textarea
             className="form-control"
@@ -35,7 +35,7 @@ export default function CardForm({ card, submitHandler, cancelHandler }) {
             onChange={updateForm}
           />
         </div>
-        <div className="form-group" className="mb-3">
+        <div className="form-group mb-3">
           <label>Back</label>
           <textarea
             className="form-control"
@@ -50,9 +50,9 @@ export default function CardForm({ card, submitHandler, cancelHandler }) {
         <Link to="/" className="btn btn-secondary" onClick={cancelHandler}>
           Done
         </Link>
-        <a className="btn btn-primary" type="submit" onClick={submit}>
+        <button className="btn btn-primary" type="submit" onClick={submit}>
           Save
-        </a>
+        </button>
       </form>
     </div>
   );

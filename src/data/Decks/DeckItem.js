@@ -22,7 +22,7 @@ export const DeckItem = ({deck, handleDeleteDeck}) => (
       <Link to={`/decks/${deck.id}/study`} className="btn btn-primary">Study</Link>
       </div>
       <div className="col-md-2">
-      <a className="btn btn-danger" onClick={() => handleDeleteDeck(deck.id)}>Delete</a>
+      <button className="btn btn-danger" onClick={() => handleDeleteDeck(deck.id)}>Delete</button>
       </div>
       </div>
     </div>

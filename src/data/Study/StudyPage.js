@@ -98,10 +98,10 @@ export default function Study() {
         <p className="card-text">
           {isFlipped ? card.back : card.front}
         </p>
-        <a className="btn btn-secondary" onClick={clickHandler}>
+        <button className="btn btn-secondary" onClick={clickHandler}>
           Flip
-        </a>
-        {isFlipped && cardIndex + 1 <= (deck.cards.length) ? <a className="btn btn-primary" onClick={nextClickHandler}>Next</a> : null}
+        </button>
+        {isFlipped && cardIndex + 1 <= (deck.cards.length) ? <button className="btn btn-primary" onClick={nextClickHandler}>Next</button> : null}
       </div>
     </div>
   )
