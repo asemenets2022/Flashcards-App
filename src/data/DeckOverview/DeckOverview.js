@@ -1,11 +1,12 @@
 import React, { useEffect, useState, useCallback, Fragment } from "react";
-import { readDeck, deleteCard } from "../../utils/api";
-import { Link, useParams } from "react-router-dom";
+import { readDeck, deleteCard, deleteDeck } from "../../utils/api";
+import { Link, useParams, useHistory } from "react-router-dom";
 import CardDetails from "./CardDetails";
 
 export default function DeckOverview() {
   const { deckId } = useParams();
   const [deck, setDeck] = useState({ cards: [] });
+  const history = useHistory();
 
   const fetchDecks = useCallback(async () => {
     try {
@@ -29,6 +30,15 @@ export default function DeckOverview() {
     ) {
       await deleteCard(id);
       fetchDecks();
+    }
+  }
+
+  async function handleDeleteDeck() {
+    if (
+      window.confirm("Delete this deck?\n\nYou will not be able to recover it.")
+    ) {
+      await deleteDeck(deckId);
+      history.push("/");
     }
   }
 
@@ -57,7 +67,7 @@ export default function DeckOverview() {
         <Link to={`/decks/${deck.id}/cards/new`} className="btn btn-primary">
           Add Cards
         </Link>
-        <button className="btn btn-danger" onClick={() => deleteHandler(deck.id)}>
+        <button className="btn btn-danger" onClick={handleDeleteDeck}>
           Delete {" "}
         </button>
       </div>
